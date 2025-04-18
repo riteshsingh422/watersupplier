@@ -1,0 +1,178 @@
+/* -------------------------------
+   ANIMATION KEYFRAMES
+------------------------------- */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -------------------------------
+   FEATURE SECTION
+------------------------------- */
+.feature {
+  background-color: #f8f9fa;
+}
+
+.feature-item {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0; /* Avoid initial flicker */
+  transform: translateY(50px); /* Prevent pre-animation shake */
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #00d1f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon Spin on hover/touch with high speed */
+.spin-icon {
+  transition: transform 0.2s ease;
+}
+.spin-icon:hover,
+.spin-icon:active {
+  animation: spin 0.4s linear infinite; /* Very fast spin */
+}
+
+/* Animate only when in view */
+.animate-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Slight delay between elements for staggered effect */
+.animate-delay-1 {
+  animation-delay: 0.2s;
+}
+.animate-delay-2 {
+  animation-delay: 0.4s;
+}
+.animate-delay-3 {
+  animation-delay: 0.5s;
+}
+.animate-delay-4 {
+  animation-delay: 0.6s;
+}
+
+/* -------------------------------
+   FOOTER STYLES
+------------------------------- */
+.footer {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #ffffff;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/wave.png') repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-bottom: 2px solid #00d1f9;
+  padding-bottom: 10px;
+}
+
+.footer-link {
+  color: #d3e0ea;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #00d1f9;
+  transform: translateX(5px);
+}
+
+.subscribe-form input {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 30px;
+}
+
+.subscribe-form input::placeholder {
+  color: #d3e0ea;
+}
+
+.subscribe-form .btn {
+  background-color: #00d1f9;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-form .btn:hover {
+  background-color: #00a3cc;
+}
+
+.social-icons .social-icon {
+  background-color: #00d1f9;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icons .social-icon:hover {
+  transform: scale(1.2);
+  background-color: #00a3cc;
+}
+
+.footer-item {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.text-light {
+  color: #d3e0ea !important;
+}

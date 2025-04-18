@@ -1,0 +1,134 @@
+.navbar-transparent {
+  background: transparent !important;
+  transition: background-color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.navbar-scrolled {
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: none;
+}
+
+.navbar-light .navbar-brand {
+  color: #007bff !important;
+  font-weight: 700;
+}
+
+.navbar-light .nav-link-custom {
+  color: #333 !important;
+  font-weight: 500;
+  margin: 0 15px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-transparent .nav-link-custom {
+  color: #fff !important;
+}
+
+.navbar-light .nav-link-custom:hover,
+.navbar-light .nav-link-custom.active {
+  color: #007bff !important;
+}
+
+.navbar-light .nav-link-custom::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.navbar-light .nav-link-custom:hover::after,
+.navbar-light .nav-link-custom.active::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: none !important;
+  color: #fff !important;
+}
+
+.navbar-scrolled .navbar-toggler {
+  color: #333 !important;
+}
+
+.btn-primary.rounded-pill {
+  background: #007bff;
+  border: none;
+  font-weight: 500;
+}
+
+.btn-primary.rounded-pill:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  .navbar-transparent .navbar-collapse {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .navbar-transparent .nav-link-custom {
+    color: #333 !important;
+  }
+
+  .btn-primary.rounded-pill {
+    margin: 10px auto;
+    display: block;
+    width: fit-content;
+  }
+}
+
+/* ------------------------- */
+/* ✨ Entrance Animations ✨  */
+/* ------------------------- */
+
+@keyframes slideDownFade {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRightFade {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.navbar-brand-animate {
+  animation: slideRightFade 1s ease-out;
+}
+
+.nav-link-animate {
+  animation: slideDownFade 1s ease-out;
+}
+
+.nav-button-animate {
+  animation: slideDownFade 1.2s ease-out;
+}

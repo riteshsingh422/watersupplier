@@ -1,0 +1,42 @@
+// Feature Section Styles
+.feature {
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: var(--bs-white);
+      border-radius: 10px;
+      transition: 0.5s;
+  
+      &:hover {
+        box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+      }
+  
+      .feature-icon {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bs-primary);
+  
+        i {
+          transition: 0.5s;
+        }
+      }
+  
+      &:hover .feature-icon i {
+        transform: rotate(360deg);
+      }
+  
+      a.btn {
+        transition: 0.5s;
+      }
+  
+      &:hover a.btn:hover {
+        color: var(--bs-primary) !important;
+      }
+    }
+  }

@@ -1,0 +1,46 @@
+// Mixins for border-radius
+@mixin border-radius($radius) {
+    border-radius: $radius;
+  }
+  
+  // Mixins for font-size
+  @mixin font-size($size) {
+    font-size: $size;
+  }
+  
+  // Mixins for transitions
+  @mixin transition($transition...) {
+    transition: $transition;
+  }
+  
+  // Gradient background mixin
+  @mixin gradient-bg($color: null) {
+    background-color: $color;
+  }
+  
+  // Breakpoint mixins
+  @function breakpoint-next($name, $breakpoints: $grid-breakpoints) {
+    $n: index(map-keys($breakpoints), $name);
+    @if $n < length($breakpoints) {
+      @return nth(map-keys($breakpoints), $n + 1);
+    }
+    @return null;
+  }
+  
+  @function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+    @if $name == map-keys($breakpoints)[] {
+      @return "";
+    }
+    @return "-#{$name}";
+  }
+  
+  @mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @if $min {
+      @media (min-width: $min) {
+        @content;
+      }
+    } @else {
+      @content;
+    }
+  }

@@ -1,0 +1,280 @@
+.about {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.about-img-wrapper {
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+.about-img {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.02);
+}
+
+.about-img img {
+  width: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.about-img:hover img {
+  opacity: 0.95;
+}
+
+.about-exp {
+  position: absolute;
+  bottom: 100%; /* Place above image */
+  left: 50%;
+  transform: translateX(-50%) translateY(20px); /* Center and offset slightly */
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #007bff, #00b4db); /* Water-like gradient */
+  border-radius: 50px; /* Soft pill shape */
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+  animation: pulse 2s infinite ease-in-out; /* Gentle pulse */
+}
+
+.about-exp:hover {
+  transform: translateX(-50%) translateY(15px); /* Lift slightly */
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.5);
+}
+
+.about-content {
+  animation: fadeIn 1s ease-out 0.2s;
+  animation-fill-mode: both;
+}
+
+.about-item h4 {
+  color: #007bff;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.about-item h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.about-item p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.about-card {
+  background: #f8f9fa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-icon-wrapper {
+  width: 80px;
+  height: 80px;
+}
+
+.about-icon-wrapper .rounded-circle {
+  width: 100%;
+  height: 100%;
+  background: #007bff;
+  transition: background 0.3s ease;
+}
+
+.about-card:hover .rounded-circle {
+  background: #0056b3;
+}
+
+.icon-hover {
+  transition: transform 0.6s ease;
+}
+
+.about-card:hover .icon-hover {
+  transform: rotate(360deg);
+}
+
+.about-card h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.about-card:hover h5 {
+  color: #007bff;
+}
+
+.about-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.about-item .btn-primary {
+  background: #007bff;
+  border: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.about-item .btn-primary:hover {
+  background: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.counter {
+  background: url('/public/img/fact-bg.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center the full-width element */
+  padding: 40px 0;
+  position: relative;
+}
+
+.counter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 123, 255, 0.7); /* Blue overlay with low opacity */
+  z-index: 0;
+}
+
+.counter .row {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px; /* Optional: limit content width for readability */
+  margin: 0 auto; /* Center the row content */
+  padding: 0 15px; /* Maintain some padding for content */
+}
+
+.counter-item {
+  text-align: center;
+  color: #fff;
+}
+
+.counter-item-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.counter-counting {
+  font-size: 2rem;
+}
+
+.counter-counting .h1 {
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) translateY(20px) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) translateY(20px) scale(1.05);
+  }
+  100% {
+    transform: translateX(-50%) translateY(20px) scale(1);
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .about-item h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-img-wrapper,
+  .about-content {
+    margin-bottom: 2rem;
+  }
+
+  .about-exp {
+    transform: translateX(-50%) translateY(10px);
+  }
+
+  .about-exp:hover {
+    transform: translateX(-50%) translateY(5px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .about {
+    padding: 40px 0;
+  }
+
+  .about-item h1 {
+    font-size: 2rem;
+  }
+
+  .about-item p {
+    font-size: 1rem;
+  }
+
+  .about-card h5 {
+    font-size: 1.2rem;
+  }
+
+  .about-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon-hover {
+    font-size: 1.5rem !important;
+  }
+
+  .about-exp {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+
+  .counter-item-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .counter-counting {
+    font-size: 1.5rem;
+  }
+
+  .counter-counting .h1 {
+    font-size: 1.5rem;
+  }
+}

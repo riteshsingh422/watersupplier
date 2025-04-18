@@ -1,0 +1,76 @@
+// Colors
+$white:    #fff;
+$gray-600: #6c757d;
+$gray-900: #212529;
+$primary:  #0d6efd;
+$secondary: #6c757d;
+$dark:     #212529;
+$light:    #f8f9fa;
+$body-color: #6c757d;
+
+// Spacing
+$navbar-padding-y:          0.5rem;
+$navbar-padding-x:          1rem;
+$navbar-nav-link-padding-x: 0.5rem;
+$nav-link-padding-y:        0.5rem;
+$nav-link-padding-x:        1rem;
+
+// Fonts
+$navbar-brand-font-size:    1.25rem;
+$navbar-toggler-font-size:  1.25rem;
+
+// Borders
+$border-width:              1px;
+$navbar-toggler-border-radius: 0.25rem;
+
+// Transitions
+$navbar-toggler-transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+// Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// Navbar-specific variables
+$navbar-light-color:                rgba($gray-900, 0.7);
+$navbar-light-hover-color:          rgba($gray-900, 0.9);
+$navbar-light-active-color:         $gray-900;
+$navbar-light-disabled-color:       $gray-600;
+$navbar-light-toggler-border-color: rgba($gray-900, 0.1);
+$navbar-light-brand-color:          $navbar-light-active-color;
+$navbar-light-brand-hover-color:    $navbar-light-active-color;
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+
+$navbar-dark-color:                 rgba($white, 0.55);
+$navbar-dark-hover-color:           rgba($white, 0.75);
+$navbar-dark-active-color:          $white;
+$navbar-dark-disabled-color:        rgba($white, 0.25);
+$navbar-dark-toggler-border-color:  rgba($white, 0.1);
+$navbar-dark-brand-color:           $navbar-dark-active-color;
+$navbar-dark-brand-hover-color:     $navbar-dark-active-color;
+$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+
+$navbar-brand-padding-y:            0.3125rem;
+$navbar-brand-margin-end:           1rem;
+$navbar-toggler-padding-y:          0.25rem;
+$navbar-toggler-padding-x:          0.75rem;
+$navbar-toggler-focus-width:        0.25rem;
+
+// Missing variables from Bootstrap
+$link-decoration:          underline; // Default value from Bootstrap
+$link-hover-decoration:    underline; // Default value from Bootstrap
+
+$variable-prefix:          bs-;

@@ -1,0 +1,86 @@
+.vendor-login-container {
+    background-image: url('https://img.freepik.com/premium-photo/water-splashes-with-copy-space-blue_143092-2128.jpg?w=900');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .vendor-login-box {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+  }
+  
+  .vendor-login-title {
+    text-align: center;
+    color: #2b4eff;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input-group label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .input-group .form-control {
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+  }
+  
+  .input-group .form-control:focus {
+    border-color: #2b4eff;
+    box-shadow: 0 0 8px rgba(43, 78, 255, 0.3);
+    outline: none;
+  }
+  
+  .btn-login {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    background-color: #2b4eff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-login:hover {
+    background-color: #1a38c0;
+  }
+  
+  .vendor-switch {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .vendor-switch a {
+    color: #2b4eff;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .vendor-switch a:hover {
+    text-decoration: underline;
+  }
+  
