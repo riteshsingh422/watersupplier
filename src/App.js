@@ -17,6 +17,8 @@ import Dashboard from './Components/Dashboard'; // ✅ Vendor Dashboard after lo
 import OrderDetails from './Components/OrderDetails'; // ✅ View Order Details
 import ArrowScroll from './Components/ArrowScroll';
 import 'animate.css';
+import Profile from './Components/Profile';
+
 
 
 const Home = () => {
@@ -81,6 +83,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/vendor-apply" element={<VendorApply />} />
         <Route path="/vendor-login" element={<VendorLogin />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/order/:id" element={<OrderDetails />} />
       </Routes>

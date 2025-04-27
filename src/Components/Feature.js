@@ -58,9 +58,9 @@ const Feature = () => {
               <p className="mb-4">
                 Every drop is tested to ensure unmatched purity and safety for your peace of mind.
               </p>
-              <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
+              {/* <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
                 Learn More <i className="fa fa-angle-right ms-2"></i>
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="col-md-6 col-lg-6 col-xl-3">
@@ -72,9 +72,9 @@ const Feature = () => {
               <p className="mb-4">
                 Our cutting-edge process removes impurities, delivering crisp, clean water every time.
               </p>
-              <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
+              {/* <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
                 Learn More <i className="fa fa-angle-right ms-2"></i>
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="col-md-6 col-lg-6 col-xl-3">
@@ -86,9 +86,9 @@ const Feature = () => {
               <p className="mb-4">
                 Sustainable materials and processes ensure our water is kind to both you and the planet.
               </p>
-              <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
+              {/* <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
                 Learn More <i className="fa fa-angle-right ms-2"></i>
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="col-md-6 col-lg-6 col-xl-3">
@@ -100,9 +100,9 @@ const Feature = () => {
               <p className="mb-4">
                 State-of-the-art labs monitor quality, guaranteeing water that meets the highest standards.
               </p>
-              <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
+              {/* <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
                 Learn More <i className="fa fa-angle-right ms-2"></i>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

@@ -24,18 +24,30 @@ const Footer = () => {
           </div>
           <div className="col-lg-5">
             <div className="d-flex align-items-center justify-content-center justify-content-lg-end social-icons">
-              <a href="#" className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
-                <FaFacebookF />
-              </a>
-              <a href="#" className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
-                <FaTwitter />
-              </a>
-              <a href="#" className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
-                <FaInstagram />
-              </a>
-              <a href="#" className="btn btn-primary btn-md-square rounded-circle me-0 social-icon">
-                <FaLinkedinIn />
-              </a>
+              <div className="d-flex flex-column align-items-center">
+                <a href="#" className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
+                  <FaFacebookF />
+                </a>
+                <span className="text-light mt-1" style={{ fontSize: '0.8rem' }}>Facebook</span>
+              </div>
+              <div className="d-flex flex-column align-items-center">
+                <a href="#" className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
+                  <FaTwitter />
+                </a>
+                <span className="text-light mt-1" style={{ fontSize: '0.8rem' }}>Twitter</span>
+              </div>
+              <div className="d-flex flex-column align-items-center">
+                <a href="#" className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
+                  <FaInstagram style={{ color: '#D62976' }} />
+                </a>
+                <span className="text-light mt-1" style={{ fontSize: '0.8rem' }}>Instagram</span>
+              </div>
+              <div className="d-flex flex-column align-items-center">
+                <a href="#" className="btn btn-primary btn-md-square rounded-circle me-0 social-icon">
+                  <FaLinkedinIn />
+                </a>
+                <span className="text-light mt-1" style={{ fontSize: '0.8rem' }}>LinkedIn</span>
+              </div>
             </div>
           </div>
         </div>
