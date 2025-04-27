@@ -1,57 +1,270 @@
+/* Reuse styles from Dashboard.css */
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #121212;
+}
+
+/* Sidebar (same as Dashboard.css) */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #1e1e2f, #2c2c3e);
+  color: #fff;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.sidebar-header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #00c4b4;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar-menu li {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.sidebar-menu li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.sidebar-menu li.active {
+  background: #00c4b4;
+  color: #121212;
+}
+
+.menu-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 20px;
+  background: #1a1a2e;
+  color: #fff;
+}
+
 .order-details-container {
+  padding: 30px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Card Styling */
+.animated-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  max-width: 700px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.animated-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Buttons */
+.back-btn {
+  border: 1px solid #00c4b4;
+  color: #00c4b4;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #00c4b4;
+  color: #121212;
+}
+
+.save-btn {
+  background: #4caf50;
+  border: none;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.save-btn:hover {
+  background: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Form Elements */
+.status-select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00c4b4;
+  color: #fff;
+}
+
+.status-select:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #00c4b4;
+  box-shadow: none;
+}
+
+.notes-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00c4b4;
+  color: #fff;
+}
+
+.notes-input:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #00c4b4;
+  box-shadow: none;
+}
+
+.notes-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #00c4b4;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -30px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: #00c4b4;
+  border-radius: 50%;
+  border: 2px solid #1a1a2e;
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.timeline-content small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Loader */
+.order-loader {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #121212;
+}
+
+/* Modal */
+.modal-header-custom {
+  background: #1e1e2f;
+  color: #fff;
+  border-bottom: 1px solid #00c4b4;
+}
+
+.modal-body-custom {
+  background: #2c2c3e;
+  color: #fff;
+}
+
+.modal-footer-custom {
+  background: #1e1e2f;
+  border-top: 1px solid #00c4b4;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
     position: relative;
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    z-index: 1;
-    overflow: hidden;
   }
-  
-  /* Background image with opacity using ::before */
-  .order-details-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url('https://img.freepik.com/free-photo/water-splash-isolated-white-background_1112-2043.jpg?ga=GA1.1.286686333.1734610646&semt=ais_hybrid&w=740');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.2; /* Adjust opacity here */
-    z-index: -1;
+
+  .main-content {
+    margin-left: 0;
   }
-  
-  
+
+  .order-details-container {
+    padding: 20px 10px;
+  }
+
   .animated-card {
-    max-width: 600px;
-    width: 100%;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.95);
-    animation: fadeInSlide 1s ease-in-out;
+    max-width: 100%;
   }
-  
-  .order-loader {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  @keyframes fadeInSlide {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}
