@@ -12,7 +12,7 @@ const VendorLogin = () => {
     e.preventDefault();
 
     // Hardcoded email and password
-    const validEmail = 'vendor@example.com';
+    const validEmail = 'vendor@gmail.com';
     const validPassword = 'password123';
 
     if (email === validEmail && password === validPassword) {
