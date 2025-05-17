@@ -7,19 +7,11 @@ import About from './Components/About';
 import Service from './Components/Service';
 import Product from './Components/Product';
 import Testimonial from './Components/Testimonial';
+import Gallery from './Components/Gallery';
 import Footer from './Components/Footer';
-import OrderModal from './Components/OrderModal';
 import ContactUs from './Components/ContactUs';
 import Loader from './Components/Loader';
-import VendorApply from './Components/VendorApply';
-import VendorLogin from './Components/VendorLogin'; // ✅ Vendor Login Route
-import Dashboard from './Components/Dashboard'; // ✅ Vendor Dashboard after login
-import OrderDetails from './Components/OrderDetails'; // ✅ View Order Details
-import ArrowScroll from './Components/ArrowScroll';
 import 'animate.css';
-import Profile from './Components/Profile';
-
-
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
@@ -64,31 +56,19 @@ const Home = () => {
           </div>
           <Product />
           <Testimonial />
+          <div id="gallery">
+            <Gallery />
+          </div>
           <div ref={contactRef} id="contact">
             <ContactUs />
           </div>
           <Footer />
-          <OrderModal show={showModal} handleClose={handleClose} />
-          <ArrowScroll />
+          {/* <OrderModal show={showModal} handleClose={handleClose} /> */}
+          {/* <ArrowScroll /> */}
         </>
       )}
     </div>
   );
 };
 
-const App = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/vendor-apply" element={<VendorApply />} />
-        <Route path="/vendor-login" element={<VendorLogin />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/order/:id" element={<OrderDetails />} />
-      </Routes>
-    </Router>
-  );
-};
-
-export default App;
+export default Home;

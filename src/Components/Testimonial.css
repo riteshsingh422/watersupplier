@@ -1,114 +1,170 @@
-.testimonial .owl-nav .owl-prev {
-    position: absolute;
-    top: -58px;
-    right: 0;
-    background: var(--bs-primary);
-    color: var(--bs-white);
-    padding: 5px 30px;
-    border-radius: 30px;
-    transition: 0.5s;
+/* General styling for the testimonial section */
+.testimonial {
+  background: linear-gradient(135deg, #f5f7fa, #e4e9f0); /* Subtle gradient background */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header styling */
+.testimonial .text-center {
+  padding-bottom: 40px;
+}
+
+.testimonial .text-uppercase {
+  color: rgb(255, 230, 0); /* Matching Portfolio.css change */
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial .display-3 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c3e50; /* Darker color for contrast */
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Testimonial item styling */
+.testimonial .testimonial-item {
+  background: #ffffff; /* White background for the card */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border: 2px solid transparent; /* Gradient border setup */
+  background-clip: padding-box;
+  position: relative;
+  margin: 0 15px; /* Space between carousel items */
+}
+
+/* Gradient border effect using ::before */
+.testimonial .testimonial-item::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #0d6efd, #00c4b4); /* Gradient border */
+  border-radius: 17px; /* Slightly larger to account for border width */
+  z-index: -1;
+}
+
+/* DP (Display Picture) styling */
+.testimonial .testimonial-dp {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #0d6efd; /* Primary color border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  object-fit: cover;
+}
+
+/* Review text styling */
+.testimonial .testimonial-item p {
+  color: #333; /* Changed to dark gray for readability (was rgb(255, 230, 0)) */
+  font-size: 1.7rem;
+  font-style: italic; /* Add a touch of elegance */
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for readability */
+}
+
+/* Name styling */
+.testimonial .testimonial-item h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Profession styling */
+.testimonial .testimonial-item .profession {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* Carousel dots styling */
+.testimonial .carousel-indicators {
+  bottom: -40px; /* Position dots below the carousel */
+}
+
+.testimonial .carousel-indicators li {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #0d6efd; /* Primary color for inactive dots */
+  border: 2px solid #ffffff; /* White border for contrast */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Subtle glow */
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.testimonial .carousel-indicators .active {
+  background-color: #00c4b4; /* Secondary color for active dot */
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 0 12px rgba(0, 196, 180, 0.5); /* Glow effect for active dot */
+}
+
+/* Remove fade animation for carousel items (use default slide transition) */
+.testimonial .carousel-item {
+  transition: transform 0.6s ease-in-out; /* Ensure smooth sliding */
+}
+
+/* Animation for fade-in effect (kept for potential use) */
+.testimonial .wow {
+  visibility: hidden;
+}
+
+.testimonial .wow.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
   }
-  
-  .testimonial .owl-nav .owl-prev:hover {
-    background: var(--bs-secondary);
-    color: var(--bs-white);
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
-  
-  .testimonial .owl-nav .owl-next {
-    position: absolute;
-    top: -58px;
-    right: 88px;
-    background: var(--bs-primary);
-    color: var(--bs-white);
-    padding: 5px 30px;
-    border-radius: 30px;
-    transition: 0.5s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .testimonial {
+    padding: 40px 0;
   }
-  
-  .testimonial .owl-nav .owl-next:hover {
-    background: var(--bs-secondary);
-    color: var(--bs-white);
+
+  .testimonial .display-3 {
+    font-size: 2rem;
   }
-  
-  .testimonial-carousel .owl-dots {
-    display: flex;
-    justify-content: center;
-    margin-left: 20px;
-    margin-top: 20px;
+
+  .testimonial .testimonial-item p {
+    font-size: 1.4rem;
   }
-  
-  .testimonial-carousel .owl-dots .owl-dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    margin-right: 15px;
-    border: 1px solid var(--bs-secondary);
-    background: var(--bs-primary);
-    transition: 0.5s;
+
+  .testimonial .testimonial-item h4 {
+    font-size: 1.3rem;
   }
-  
-  .testimonial-carousel .owl-dots .owl-dot.active {
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    border: 1px solid var(--bs-primary);
-    background: var(--bs-secondary) !important;
-    transition: 0.5s;
+
+  .testimonial .testimonial-item .profession {
+    font-size: 1rem;
   }
-  
-  .testimonial-carousel .owl-dots .owl-dot span {
-    position: relative;
-    margin-top: 50%;
-    margin-left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+
+  .testimonial .testimonial-dp {
+    width: 60px;
+    height: 60px;
   }
-  
-  .testimonial-carousel .owl-dots .owl-dot span::after {
-    content: "";
-    width: 8px;
-    height: 8px;
-    border-radius: 8px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: var(--bs-white);
+}
+
+@media (max-width: 1199.98px) {
+  .testimonial .display-3 {
+    font-size: 2.5rem;
   }
-  
-  @media (max-width: 992px) {
-    .owl-carousel.testimonial-carousel {
-      padding-top: 30px;
-    }
-  
-    .testimonial .owl-nav .owl-prev,
-    .testimonial .owl-nav .owl-next {
-      top: -30px;
-    }
-  }
-  
-  .testimonial .wow {
-    visibility: hidden;
-  }
-  
-  .testimonial .wow.fadeInUp {
-    animation-name: fadeInUp;
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 100%, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
+}

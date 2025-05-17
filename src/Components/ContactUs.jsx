@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -28,43 +28,25 @@ const ContactUs = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-center text-white">Contact Us</h1>
+        <h1 className="text-center ">Contact Us</h1>
         <p className="text-center">We’d love to hear from you! Reach out for inquiries or support.</p>
       </motion.div>
 
-      {/* Contact Info & Form */}
+      {/* Map & Form */}
       <Row className="justify-content-center align-items-center py-5">
-        {/* Contact Info */}
-        <Col md={4} className="contact-info" data-aos="fade-right">
-          <div className="info-card">
-            <div className="info-item">
-              <FaMapMarkerAlt className="icon" />
-              <div>
-                <h5>Our Location</h5>
-                <p>123 Water Street, New York, USA</p>
-              </div>
-            </div>
-            <div className="info-item">
-              <FaEnvelope className="icon" />
-              <div>
-                <h5>Email Us</h5>
-                <p>info@aquanest.com</p>
-              </div>
-            </div>
-            <div className="info-item">
-              <FaPhone className="icon" />
-              <div>
-                <h5>Call Us</h5>
-                <p>+1-234-567-890</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="social-links" data-aos="zoom-in">
-            <a href="#" className="social-icon"><FaFacebookF /></a>
-            <a href="#" className="social-icon"><FaTwitter /></a>
-            <a href="#" className="social-icon"><FaInstagram /></a>
-            <a href="#" className="social-icon"><FaLinkedinIn /></a>
+        {/* Embedded Map */}
+        <Col md={4} data-aos="fade-right">
+          <div className="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.6793138345492!2d87.23969317556156!3d23.651652978737854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f76b0066f418f3%3A0xe2d2b39e8b1628d8!2sINSABHI%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1747434141258!5m2!1sen!2sin"
+              width="100%"
+              height="350"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Map of INSABHI PVT LTD, Ukhra, West Bengal 713363"
+            ></iframe>
           </div>
         </Col>
 
@@ -85,9 +67,13 @@ const ContactUs = () => {
                 <Form.Control as="textarea" rows={3} placeholder="Your message" required />
               </Form.Group>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="primary" type="submit" className="w-100 rounded-pill py-2">
+              <Button
+                  type="submit"
+                  className="w-100 rounded-pill py-2"
+                  style={{ background: 'linear-gradient(135deg, #ffe600, rgb(219, 88, 0))', color: 'white' }}
+                >
                   Send Message
-                </Button>
+              </Button>
               </motion.div>
             </Form>
           </div>
@@ -101,14 +87,19 @@ const ContactUs = () => {
           alt="Any Questions?"
           className="whatsapp-gif"
         />
-        <div className="whatsapp-query-content">
-          <h4>Have any queries?</h4>
-          <p>Reach out to us directly on WhatsApp for instant support and answers!</p>
-          <a href="https://wa.me/1234567890" className="whatsapp-button" target="_blank" rel="noopener noreferrer">
-            <FaWhatsapp className="whatsapp-icon" />
-            Chat on WhatsApp
-          </a>
-        </div>
+       <div className="whatsapp-query-content">
+            <h4>Have any queries?</h4>
+            <p>Reach out to us directly on Email!</p>
+            <a
+              href="mailto:info@insabhi.com"
+              className="whatsapp-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaEnvelope className="Email-icon" />
+              Mail Us
+            </a>
+          </div>
       </div>
 
       <div className="wave-animation"></div>

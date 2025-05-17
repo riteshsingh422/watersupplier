@@ -1,0 +1,122 @@
+.gallery-container {
+    padding: 120px 0; /* Reduced padding to make the section more compact */
+    position: relative;
+    overflow: hidden;
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gallery-header {
+    margin-bottom: 20px; /* Reduced from 40px to bring text closer to gallery */
+  }
+  
+  .gallery-header h1 {
+    font-size: 2.5rem; /* Reduced from 3rem for compactness */
+    font-weight: 700;
+    color: #ffe600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px; /* Added to control spacing between h1 and p */
+  }
+  
+  .gallery-header p {
+    font-size: 1rem; /* Reduced from 1.2rem */
+    max-width: 500px; /* Slightly reduced from 600px */
+    margin: 0 auto;
+    color: #d3e0ea;
+    margin-bottom: 100px;
+  }
+  
+  .scope {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: slid 30s linear infinite;
+  }
+  
+  .scope span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+  }
+  
+  .scope span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 2s;
+  }
+  
+  .scope span:hover img {
+    transform: translateY(-50px) scale(1.7);
+  }
+  
+  @keyframes slid {
+    0% {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(1000px) rotateY(360deg);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .gallery-header h1 {
+      font-size: 2rem; /* Further reduced from 2.5rem */
+    }
+  
+    .gallery-header p {
+      font-size: 0.9rem; /* Further reduced from 1rem */
+    }
+  
+    .scope {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .scope span {
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(250px);
+    }
+  
+    .scope span:hover img {
+      transform: translateY(-30px) scale(1.5);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .gallery-header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .gallery-header p {
+      font-size: 0.8rem;
+    }
+  
+    .scope {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .scope span {
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px);
+    }
+  
+    .scope span:hover img {
+      transform: translateY(-20px) scale(1.3);
+    }
+  }

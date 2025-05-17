@@ -30,17 +30,18 @@
 .about-exp {
   position: absolute;
   bottom: 100%; /* Place above image */
-  left: 50%;
+  left: 50%; /* Center horizontally */
   transform: translateX(-50%) translateY(20px); /* Center and offset slightly */
   padding: 12px 30px;
   font-size: 1.2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #007bff, #00b4db); /* Water-like gradient */
+  background: linear-gradient(135deg, #ffe600, #db3a00); /* Water-like gradient */
   border-radius: 50px; /* Soft pill shape */
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 1;
   animation: pulse 2s infinite ease-in-out; /* Gentle pulse */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .about-exp:hover {
@@ -55,7 +56,7 @@
 
 .about-item h4 {
   color: #007bff;
-  font-size: 1.25rem;
+  font-size: 1.7rem;
   letter-spacing: 2px;
   font-weight: 600;
 }
@@ -140,7 +141,7 @@
 }
 
 .counter {
-  background: url('/public/img/fact-bg.jpg') no-repeat center center;
+  background: url('/public/img/fact-bg.jpeg') no-repeat center center;
   background-size: cover;
   width: 100vw; /* Full viewport width */
   margin-left: calc(-50vw + 50%); /* Center the full-width element */
@@ -234,6 +235,7 @@
   }
 }
 
+
 @media (max-width: 767.98px) {
   .about {
     padding: 40px 0;
@@ -254,6 +256,14 @@
   .about-icon-wrapper {
     width: 60px;
     height: 60px;
+    aspect-ratio: 1/1; /* Ensure square shape */
+  }
+
+  .about-icon-wrapper .rounded-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% !important; /* Force circular shape */
+    aspect-ratio: 1/1; /* Ensure circular shape */
   }
 
   .icon-hover {
@@ -261,8 +271,15 @@
   }
 
   .about-exp {
-    font-size: 1rem;
-    padding: 8px 20px;
+    font-size: 0.9rem;
+    padding: 6px 15px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    bottom: 100%;
+  }
+
+  .about-exp:hover {
+    transform: translateX(-50%) translateY(5px);
   }
 
   .counter-item-icon {

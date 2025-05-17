@@ -7,31 +7,31 @@ const Testimonial = () => {
   const testimonialData = [
     {
       id: 1,
-      image: '/img/testimonial-1.jpg',
-      name: 'Client Name',
-      profession: 'Profession',
-      review: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt pariatur officiis quis molestias, sit iure sunt voluptatibus accusantium laboriosam dolore.',
+      image: '/img/dp.jpg',
+      name: 'Santosh T',
+      profession: 'Owner',
+      review: 'Partnering with Sachin for 7+ years has been invaluable. He nurtured a skilled team at Insabhi through personal training. I confidently recommend their dedication',
     },
     {
       id: 2,
-      image: '/img/testimonial-2.jpg',
-      name: 'Client Name',
-      profession: 'Profession',
-      review: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt pariatur officiis quis molestias, sit iure sunt voluptatibus accusantium laboriosam dolore.',
+      image: '/img/dp.jpg',
+      name: 'Gurneet Jolly',
+      profession: 'Director',
+      review: 'Since 2018, Insabhi work has been phenomenal providing invaluable system enhancement recommendations. Sachin talent and reliability make them highly professional and recommended.',
     },
     {
       id: 3,
-      image: '/img/testimonial-3.jpg',
-      name: 'Client Name',
-      profession: 'Profession',
-      review: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidente pariatur officiis quis molestias, sit iure sunt voluptatibus accusantium laboriosam dolore.',
+      image: '/img/dp.jpg',
+      name: 'Mohammed Alkhatib',
+      profession: 'Owner',
+      review: 'Sachin showed professionalism developing our website on timely manner, he extended his support beyond our contact and supported us even at late hours when we needed him.',
     },
     {
       id: 4,
-      image: '/img/testimonial-3.jpg',
-      name: 'Client Name',
-      profession: 'Profession',
-      review: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidente pariatur officiis quis molestias, sit iure sunt voluptatibus accusantium laboriosam dolore.',
+      image: '/img/dp.jpg',
+      name: 'Samir Sal',
+      profession: 'Office Accountant',
+      review: 'Working with Insabhi is refreshing. Their expertise and dedication are invaluable. They consistently demonstrate commitment as our reliable technology partner.',
     },
   ];
 
@@ -39,27 +39,20 @@ const Testimonial = () => {
     <div className="container-fluid testimonial py-5" style={{ border: '2px solid red', minHeight: '200px' }}>
       <div className="container py-5">
         <div className="text-center mx-auto pb-5" style={{ maxWidth: '800px' }}>
-          <h4 className="text-uppercase text-primary">Testimonials</h4>
+          <h4 className="text-uppercase">Testimonials</h4>
           <h1 className="display-3 text-capitalize mb-3">Our clients reviews.</h1>
         </div>
-        <Carousel interval={3000} controls={false} indicators={true}> {/* Auto-changes every 3 seconds */}
+        <Carousel interval={3000} controls={false} indicators={true}>
           {testimonialData.map((item) => (
             <Carousel.Item key={item.id}>
               <div className="testimonial-item text-center p-4">
-                <p>{item.review}</p>
                 <div className="d-flex justify-content-center mb-4">
-                  <img src={item.image} className="img-fluid border border-4 border-primary" style={{ width: '100px', height: '100px', borderRadius: '50px' }} alt={item.name} />
+                  <img src={item.image} className="testimonial-dp" alt={item.name} />
                 </div>
+                <p>{item.review}</p>
                 <div className="d-block">
                   <h4 className="text-dark">{item.name}</h4>
-                  <p className="m-0 pb-3">{item.profession}</p>
-                  <div className="d-flex justify-content-center text-secondary">
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                  </div>
+                  <p className="m-0 pb-3 profession">{item.profession}</p>
                 </div>
               </div>
             </Carousel.Item>

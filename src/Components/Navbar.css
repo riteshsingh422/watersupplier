@@ -14,7 +14,7 @@
 }
 
 .navbar-light .navbar-brand {
-  color: #007bff !important;
+  color: #ff0000 !important;
   font-weight: 700;
 }
 
@@ -32,7 +32,7 @@
 
 .navbar-light .nav-link-custom:hover,
 .navbar-light .nav-link-custom.active {
-  color: #007bff !important;
+  color: #ffe600 !important;
 }
 
 .navbar-light .nav-link-custom::after {
@@ -42,7 +42,7 @@
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #007bff;
+  background-color: #ff0000;
   transition: width 0.3s ease;
 }
 
@@ -51,33 +51,80 @@
   width: 100%;
 }
 
-.navbar-toggler {
+/* Custom Toggler (Hamburger Icon) */
+.custom-toggler {
   border: none !important;
-  color: #fff !important;
+  padding: 0;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  background: transparent;
+  cursor: pointer;
 }
 
-.navbar-scrolled .navbar-toggler {
-  color: #333 !important;
+.custom-toggler:focus {
+  outline: none;
 }
 
-.btn-primary.rounded-pill {
-  background: #007bff;
-  border: none;
-  font-weight: 500;
+.toggler-icon {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
 }
 
-.btn-primary.rounded-pill:hover {
-  background: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.navbar-scrolled .toggler-icon {
+  background: #333;
 }
 
+.toggler-icon.top-bar {
+  top: 0;
+}
+
+.toggler-icon.middle-bar {
+  top: 10px;
+}
+
+.toggler-icon.bottom-bar {
+  top: 20px;
+}
+
+/* Toggler Open State (Cross) */
+.custom-toggler.open .top-bar {
+  transform: rotate(45deg);
+  top: 10px;
+}
+
+.custom-toggler.open .middle-bar {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.custom-toggler.open .bottom-bar {
+  transform: rotate(-45deg);
+  top: 10px;
+}
+
+/* Menu Collapse (Default Bootstrap Behavior) */
+.navbar-collapse {
+  transition: height 0.3s ease-in-out; /* Bootstrap default */
+}
+
+/* Responsive Styles */
 @media (max-width: 991.98px) {
   .navbar-collapse {
     background: #fff;
     padding: 15px;
     border-radius: 8px;
     margin-top: 10px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
   }
 
   .navbar-transparent .navbar-collapse {
@@ -88,24 +135,52 @@
     color: #333 !important;
   }
 
-  .btn-primary.rounded-pill {
-    margin: 10px auto;
-    display: block;
-    width: fit-content;
+  .nav-link-custom {
+    padding: 10px 15px !important;
+    margin: 5px 0;
   }
 }
 
-/* ------------------------- */
-/* ✨ Entrance Animations ✨  */
-/* ------------------------- */
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    padding: 10px;
+  }
 
+  .nav-link-custom {
+    font-size: 1rem;
+  }
+
+  .custom-toggler {
+    width: 24px;
+    height: 20px;
+  }
+
+  .toggler-icon.top-bar {
+    top: 0;
+  }
+
+  .toggler-icon.middle-bar {
+    top: 8px;
+  }
+
+  .toggler-icon.bottom-bar {
+    top: 16px;
+  }
+
+  .custom-toggler.open .top-bar,
+  .custom-toggler.open .bottom-bar {
+    top: 8px;
+  }
+}
+
+/* Existing Animations */
 @keyframes slideDownFade {
   0% {
     transform: translateY(-30px);
     opacity: 0;
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -116,7 +191,7 @@
     opacity: 0;
   }
   100% {
-    transform: translateX(0px);
+    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -129,23 +204,7 @@
   animation: slideDownFade 1s ease-out;
 }
 
-.nav-button-animate {
-  animation: slideDownFade 1.2s ease-out;
-}
-
-/* Custom Popup Animation */
-@keyframes fadeSlideIn {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Custom Login/Signup Popup Styles */
+/* Popup Styles */
 .custom-login-popup {
   position: fixed;
   top: 0;

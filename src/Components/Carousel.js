@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Carousel as BootstrapCarousel } from 'react-bootstrap';
 import { FaTimes } from 'react-icons/fa';
 import './Carousel.css';
@@ -15,9 +15,19 @@ const Carousel = ({ handleShow }) => {
   const [signupError, setSignupError] = useState('');
   const [loginError, setLoginError] = useState('');
 
-  const handleOrderNowClick = () => {
-    setShowSignupPopup(true);
-  };
+  // Preload images
+  useEffect(() => {
+    const images = [
+      '/img/hero4.jpg',
+      '/img/hero2.jpg',
+      'https://source.unsplash.com/random/1920x1080?water,blue',
+      'https://source.unsplash.com/random/1920x1080?technology',
+    ];
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
@@ -35,16 +45,14 @@ const Carousel = ({ handleShow }) => {
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    // Hardcoded credentials
     const validUsername = 'admin';
     const validPassword = 'admin123';
-
     if (loginUsername === validUsername && loginPassword === validPassword) {
       setShowLoginPopup(false);
       setLoginUsername('');
       setLoginPassword('');
       setLoginError('');
-      handleShow(); // Call handleShow on successful login
+      handleShow();
     } else {
       setLoginError('Invalid username or password');
     }
@@ -83,80 +91,66 @@ const Carousel = ({ handleShow }) => {
         ride="carousel"
         interval={3000}
         pause={false}
+        slide={true} // Ensure slide transition
       >
         <BootstrapCarousel.Item>
           <img
-            src="/img/carousel-1.jpg"
+            src="/img/hero4.jpg"
             className="img-fluid w-100"
             alt="Pure Water"
+            width="1920"
+            height="1080"
+            loading="lazy"
             onError={(e) => {
               e.target.src = 'https://source.unsplash.com/random/1920x1080?water,blue';
             }}
           />
           <BootstrapCarousel.Caption className="carousel-caption-custom">
-            <div className="carousel-caption-content slide-from-left">
-              <h4 className="text-white text-uppercase fw-bold mb-3">Pure Living</h4>
+            <div className="carousel-caption-content slide-from-top">
+              <h4 className="text-white text-uppercase fw-bold mb-3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ color: 'red', fontSize: '1.5rem', marginRight: '0.5rem' }}>•</span>
+                IT SOLUTIONS
+                <span style={{ color: 'red', fontSize: '1.5rem', marginLeft: '0.5rem' }}>•</span>
+              </h4>
               <h1 className="display-3 text-capitalize text-white mb-4">
-                Safe Water for a Healthier You
+                We offer highly effective IT solutions for your Success
               </h1>
               <p className="mb-5 fs-5 text-white">
-                Access clean, safe water to elevate your life. Quality you can trust, delivered with care.
+                <span style={{ color: 'red' }}>INSABHI</span> is an Odoo ERP Solution and Software Development company.
               </p>
-              <div className="carousel-caption-content-btn">
-                <button
-                  onClick={handleOrderNowClick}
-                  className="btn rounded-pill py-3 px-5 slide-from-left"
-                  style={{
-                    backgroundColor: '#0d6efd',
-                    color: '#fff',
-                    border: '1px solid #fff',
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  Order Now
-                </button>
-              </div>
             </div>
           </BootstrapCarousel.Caption>
         </BootstrapCarousel.Item>
         <BootstrapCarousel.Item>
           <img
-            src="/img/carousel-2.jpg"
+            src="/img/hero2.jpg"
             className="img-fluid w-100"
-            alt="Healthy Life"
+            alt="IT Innovation"
+            width="1920"
+            height="1080"
+            loading="lazy"
             onError={(e) => {
-              e.target.src = 'https://source.unsplash.com/random/1920x1080?water,wave';
+              e.target.src = 'https://source.unsplash.com/random/1920x1080?technology';
             }}
           />
           <BootstrapCarousel.Caption className="carousel-caption-custom">
-            <div className="carousel-caption-content slide-from-right">
-              <h4 className="text-white text-uppercase fw-bold mb-3">Pure Living</h4>
+            <div className="carousel-caption-content slide-from-bottom">
+              <h4 className="text-white text-uppercase fw-bold mb-3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ color: 'red', fontSize: '1.5rem', marginRight: '0.5rem' }}>•</span>
+                IT INNOVATION
+                <span style={{ color: 'red', fontSize: '1.5rem', marginLeft: '0.5rem' }}>•</span>
+              </h4>
               <h1 className="display-3 text-capitalize text-white mb-4">
-                Safe Water for a Healthier You
+                Transform Your Business with Cutting-Edge IT
               </h1>
               <p className="mb-5 fs-5 text-white">
-                Access clean, safe water to elevate your life. Quality you can trust, delivered with care.
+                <span style={{ color: 'red' }}>INSABHI</span> delivers innovative software solutions to drive your digital transformation.
               </p>
-              <div className="carousel-caption-content-btn">
-                <button
-                  onClick={handleOrderNowClick}
-                  className="btn rounded-pill py-3 px-5 slide-from-right"
-                  style={{
-                    backgroundColor: '#0d6efd',
-                    color: '#fff',
-                    border: '1px solid #fff',
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  Order Now
-                </button>
-              </div>
             </div>
           </BootstrapCarousel.Caption>
         </BootstrapCarousel.Item>
       </BootstrapCarousel>
 
-      {/* Custom Signup Popup */}
       {showSignupPopup && (
         <div className="custom-login-popup" onClick={handleCloseSignupPopup}>
           <div className="custom-login-content" onClick={(e) => e.stopPropagation()}>
@@ -213,7 +207,6 @@ const Carousel = ({ handleShow }) => {
         </div>
       )}
 
-      {/* Custom Login Popup */}
       {showLoginPopup && (
         <div className="custom-login-popup" onClick={handleCloseLoginPopup}>
           <div className="custom-login-content" onClick={(e) => e.stopPropagation()}>

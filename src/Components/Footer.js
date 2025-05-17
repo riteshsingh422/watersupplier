@@ -1,22 +1,24 @@
 import React from 'react';
-import { FaHandHoldingWater, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaAngleRight, FaMapMarkerAlt, FaEnvelope, FaPhone, FaPrint } from 'react-icons/fa';
-import './Footer.css'; // Import the new CSS file
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaAngleRight, FaMapMarkerAlt, FaEnvelope, FaPhone, FaPrint } from 'react-icons/fa';
+import './Footer.css';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div className="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-      <div className="container py-5">
-        <div className="row g-5 mb-5 align-items-center">
+    <div className="container-fluid footer py-3 wow fadeIn" data-wow-delay="0.2s" style={{ background: 'linear-gradient(135deg, #2d2d2d, #1a1a1a)' }}>
+      <div className="container py-3">
+        <div className="row g-4 mb-4 align-items-center">
           <div className="col-lg-7">
             <div className="position-relative mx-auto subscribe-form">
               <input
-                className="form-control rounded-pill w-100 py-3 ps-4 pe-5"
+                className="form-control rounded-pill w-100 py-2 ps-4 pe-5"
                 type="text"
                 placeholder="Email address to Subscribe"
               />
               <button
                 type="button"
-                className="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2"
+                className="btn btn-primary rounded-pill position-absolute top-0 end-0 py-1 px-3 mt-1 me-1"
               >
                 Subscribe
               </button>
@@ -25,94 +27,72 @@ const Footer = () => {
           <div className="col-lg-5">
             <div className="d-flex align-items-center justify-content-center justify-content-lg-end social-icons">
               <div className="d-flex flex-column align-items-center">
-                <a href="#" className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
-                  <FaFacebookF />
+                <a href="https://www.facebook.com/insabhi24/" target='_blank' className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
+                  <FaFacebookF style={{ color: '#1877F2' }} />
                 </a>
                 <span className="text-light mt-1" style={{ fontSize: '0.8rem' }}>Facebook</span>
               </div>
               <div className="d-flex flex-column align-items-center">
-                <a href="#" className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
-                  <FaTwitter />
+                <a href="https://x.com/Insabhi24" target='_blank' className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
+                  <FaTwitter style={{ color: '#1DA1F2' }} />
                 </a>
                 <span className="text-light mt-1" style={{ fontSize: '0.8rem' }}>Twitter</span>
               </div>
               <div className="d-flex flex-column align-items-center">
-                <a href="#" className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
+                <a href="https://www.instagram.com/insabhi24/" target='_blank' className="btn btn-primary btn-md-square rounded-circle me-3 social-icon">
                   <FaInstagram style={{ color: '#D62976' }} />
                 </a>
                 <span className="text-light mt-1" style={{ fontSize: '0.8rem' }}>Instagram</span>
               </div>
               <div className="d-flex flex-column align-items-center">
-                <a href="#" className="btn btn-primary btn-md-square rounded-circle me-0 social-icon">
-                  <FaLinkedinIn />
+                <a href="https://in.linkedin.com/company/insabhi" target='_blank' className="btn btn-primary btn-md-square rounded-circle me-0 social-icon">
+                  <FaLinkedinIn style={{ color: '#0A66C2' }} />
                 </a>
                 <span className="text-light mt-1" style={{ fontSize: '0.8rem' }}>LinkedIn</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="row g-5">
-          <div className="col-md-6 col-lg-6 col-xl-3">
+        <div className="row g-4">
+          <div className="col-md-6 col-lg-6 col-xl-4">
             <div className="footer-item d-flex flex-column">
               <div className="footer-item">
-                <h3 className="text-white mb-4 footer-logo">
-                  <FaHandHoldingWater className="text-primary me-3" /> AquaNest
-                </h3>
-                <p className="text-light mb-3">
-                AquaNest — delivering purity, trust, and innovation in every drop. Your reliable source for clean, healthy water solutions.
+                <img src="/img/logo.png" alt="Logo" className="footer-logo" />
+                <p className="text-dark mb-3">
+                  Insabhi — empowering your business with cutting-edge IT solutions. We specialize in software development, cloud services, and digital transformation to drive innovation and growth.
                 </p>
-              </div>
-              <div className="position-relative mt-3">
-                <input
-                  className="form-control rounded-pill w-100 py-3 ps-4 pe-5"
-                  type="text"
-                  placeholder="Enter your email"
-                />
-                <button
-                  type="button"
-                  className="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2"
-                >
-                  SignUp
-                </button>
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-lg-6 col-xl-3">
+          <div className="col-md-6 col-lg-6 col-xl-4">
             <div className="footer-item d-flex flex-column">
-              <h4 className="text-white mb-4 footer-title">About Us</h4>
-              <a href="#" className="text-light footer-link"><FaAngleRight className="me-2" /> Why Choose Us</a>
-              <a href="#" className="text-light footer-link"><FaAngleRight className="me-2" /> Free Water Bottles</a>
-              <a href="#" className="text-light footer-link"><FaAngleRight className="me-2" /> Water Dispensers</a>
-              <a href="#" className="text-light footer-link"><FaAngleRight className="me-2" /> Bottled Water Coolers</a>
-              <a href="#" className="text-light footer-link"><FaAngleRight className="me-2" /> Contact Us</a>
+              <h4 className="text-white mb-3 footer-title">About Us</h4>
+              <a href="#about" className="text-light footer-link"><FaAngleRight className="me-2" /> About Us</a>
+              <a href="#service" className="text-light footer-link"><FaAngleRight className="me-2" /> Services</a>
+              <a href="#contact" className="text-light footer-link"><FaAngleRight className="me-2" /> Contact Us</a>
+              <a href="#gallery" className="text-light footer-link"><FaAngleRight className="me-2" /> Gallery</a>
               <a href="#" className="text-light footer-link"><FaAngleRight className="me-2" /> Terms & Conditions</a>
             </div>
           </div>
-          <div className="col-md-6 col-lg-6 col-xl-3">
+          <div className="col-md-6 col-lg-6 col-xl-4">
             <div className="footer-item d-flex flex-column">
-              <h4 className="text-white mb-4 footer-title">Business Hours</h4>
-              <div className="mb-3">
-                <h6 className="text-muted mb-0">Mon - Friday:</h6>
-                <p className="text-white mb-0">09.00 am to 07.00 pm</p>
-              </div>
-              <div className="mb-3">
-                <h6 className="text-muted mb-0">Saturday:</h6>
-                <p className="text-white mb-0">10.00 am to 05.00 pm</p>
-              </div>
-              <div className="mb-3">
-                <h6 className="text-muted mb-0">Vacation:</h6>
-                <p className="text-white mb-0">All Sunday is our vacation</p>
-              </div>
+              <h4 className="text-white mb-3 footer-title">Contact Info</h4>
+              <a href="#" className="text-light footer-link"><FaMapMarkerAlt className="me-2" /> Ukhra, West Bengal 713363</a>
+              <a href="mailto:info@example.com" className="text-light footer-link"><FaEnvelope className="me-2" /> info@insabhi.com</a>
+              <a href="tel:+012 345 67890" className="text-light footer-link"><FaPhone className="me-2" /> +917908156500</a>
+              <a href="tel:+012 345 67890" className="text-light footer-link mb-3"><FaPrint className="me-2" /> +919990133483</a>
             </div>
           </div>
-          <div className="col-md-6 col-lg-6 col-xl-3">
-            <div className="footer-item d-flex flex-column">
-              <h4 className="text-white mb-4 footer-title">Contact Info</h4>
-              <a href="#" className="text-light footer-link"><FaMapMarkerAlt className="me-2" /> 123 Street, New York, USA</a>
-              <a href="mailto:info@example.com" className="text-light footer-link"><FaEnvelope className="me-2" /> info@example.com</a>
-              <a href="mailto:info@example.com" className="text-light footer-link"><FaEnvelope className="me-2" /> info@example.com</a>
-              <a href="tel:+012 345 67890" className="text-light footer-link"><FaPhone className="me-2" /> +012 345 67890</a>
-              <a href="tel:+012 345 67890" className="text-light footer-link mb-3"><FaPrint className="me-2" /> +012 345 67890</a>
+        </div>
+      </div>
+      <div className="footer-copyright">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-6 text-center text-md-start">
+              <p className="mb-0 text-light">Powered by INSABHI</p>
+            </div>
+            <div className="col-md-6 text-center text-md-end">
+              <p className="mb-0 text-light">All Rights Reserved © {currentYear}</p>
             </div>
           </div>
         </div>

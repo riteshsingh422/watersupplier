@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { FaHandHoldingWater, FaFilter, FaRecycle, FaMicroscope } from 'react-icons/fa';
+import { FaCode, FaCogs, FaServer, FaLightbulb } from 'react-icons/fa';
 import './Feature.css';
 
 const Feature = () => {
@@ -13,7 +13,7 @@ const Feature = () => {
           if (item.getBoundingClientRect().top < window.innerHeight) {
             item.classList.add('animate-up');
           } else {
-            item.classList.remove('animate-up'); // Remove the animation class when out of view
+            item.classList.remove('animate-up');
           }
         }
       });
@@ -23,15 +23,13 @@ const Feature = () => {
           if (text.getBoundingClientRect().top < window.innerHeight) {
             text.classList.add('animate-up');
           } else {
-            text.classList.remove('animate-up'); // Remove the animation class when out of view
+            text.classList.remove('animate-up');
           }
         }
       });
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    // Initial check in case the user loads the page and the content is already visible
     handleScroll();
 
     return () => {
@@ -43,66 +41,56 @@ const Feature = () => {
     <div className="container-fluid feature bg-light py-5">
       <div className="container py-5">
         <div className="text-center mx-auto pb-5" style={{ maxWidth: '800px' }}>
-          <h4 className="text-uppercase text-primary mb-3">Why Choose AquaNest</h4>
+          <h4 className="text-uppercase mb-3" style={{ color: '#ffe600' }}>
+            Why Choose <span style={{ color: 'red' }}>INSABHI</span>
+          </h4>
           <h1 className="display-4 text-capitalize mb-4">
-            Trusted Excellence in Bottled Water
+            Trusted Excellence in IT Solutions
           </h1>
         </div>
         <div className="row g-4">
           <div className="col-md-6 col-lg-6 col-xl-3">
             <div className="feature-item p-4">
-              <div className="feature-icon mb-4">
-                <FaHandHoldingWater className="text-white fa-3x spin-icon" />
+            <div className="feature-icon mb-4" style={{background: 'linear-gradient(135deg, #ffe600,rgb(219, 88, 0))'}}>
+                <FaCode className="fa-3x spin-icon" style={{ color: 'red' }} />
               </div>
-              <h4 className="mb-3">Rigorous Quality Checks</h4>
+              <h4 className="mb-3">Custom Software Development</h4>
               <p className="mb-4">
-                Every drop is tested to ensure unmatched purity and safety for your peace of mind.
+                Tailored software solutions designed to meet your unique business needs with precision.
               </p>
-              {/* <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
-                Learn More <i className="fa fa-angle-right ms-2"></i>
-              </a> */}
             </div>
           </div>
           <div className="col-md-6 col-lg-6 col-xl-3">
             <div className="feature-item p-4">
-              <div className="feature-icon mb-4">
-                <FaFilter className="text-white fa-3x spin-icon" />
+            <div className="feature-icon mb-4" style={{background: 'linear-gradient(135deg, #ffe600,rgb(219, 88, 0))'}}>
+                <FaCogs className="fa-3x spin-icon" style={{ color: 'red' }} />
               </div>
-              <h4 className="mb-3">Advanced 5-Step Filtration</h4>
+              <h4 className="mb-3">Odoo ERP Implementation</h4>
               <p className="mb-4">
-                Our cutting-edge process removes impurities, delivering crisp, clean water every time.
+                Streamlined ERP solutions to optimize your business processes and boost efficiency.
               </p>
-              {/* <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
-                Learn More <i className="fa fa-angle-right ms-2"></i>
-              </a> */}
             </div>
           </div>
           <div className="col-md-6 col-lg-6 col-xl-3">
             <div className="feature-item p-4">
-              <div className="feature-icon mb-4">
-                <FaRecycle className="text-white fa-3x spin-icon" />
+            <div className="feature-icon mb-4" style={{background: 'linear-gradient(135deg, #ffe600,rgb(219, 88, 0))'}}>
+                <FaServer className="fa-3x spin-icon" style={{ color: 'red' }} />
               </div>
-              <h4 className="mb-3">Eco-Friendly Composition</h4>
+              <h4 className="mb-3">Scalable IT Infrastructure</h4>
               <p className="mb-4">
-                Sustainable materials and processes ensure our water is kind to both you and the planet.
+                Robust and scalable IT systems to support your growth and digital transformation.
               </p>
-              {/* <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
-                Learn More <i className="fa fa-angle-right ms-2"></i>
-              </a> */}
             </div>
           </div>
           <div className="col-md-6 col-lg-6 col-xl-3">
             <div className="feature-item p-4">
-              <div className="feature-icon mb-4">
-                <FaMicroscope className="text-white fa-3x spin-icon" />
+            <div className="feature-icon mb-4" style={{background: 'linear-gradient(135deg, #ffe600,rgb(219, 88, 0))'}}>
+                <FaLightbulb className="fa-3x spin-icon" style={{ color: 'red' }} />
               </div>
-              <h4 className="mb-3">Strict Lab Control</h4>
+              <h4 className="mb-3">Innovative Technology Consulting</h4>
               <p className="mb-4">
-                State-of-the-art labs monitor quality, guaranteeing water that meets the highest standards.
+                Expert guidance to leverage cutting-edge technologies for competitive advantage.
               </p>
-              {/* <a href="#" className="btn btn-outline-primary rounded-pill py-2 px-4">
-                Learn More <i className="fa fa-angle-right ms-2"></i>
-              </a> */}
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { FaBottleWater } from 'react-icons/fa6';
 import './ArrowScroll.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLaptopCode, faServer, faDatabase, faCloud, faCode, faNetworkWired, faMicrochip, faBug } from '@fortawesome/free-solid-svg-icons';
 
 const ArrowScroll = () => {
   const [visible, setVisible] = useState(false);
@@ -21,7 +22,7 @@ const ArrowScroll = () => {
   return (
     visible && (
       <div className="scroll-to-top" onClick={scrollToTop}>
-        <FaBottleWater className="bottle-icon" />
+        <FontAwesomeIcon icon={faCode} className="it-icon" />
       </div>
     )
   );
